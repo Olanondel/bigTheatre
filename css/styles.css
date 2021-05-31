@@ -72,7 +72,7 @@ body {
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
@@ -886,6 +886,12 @@ body {
 @media screen and (max-width: 768px) {
     .awards__body {
         padding: 126px 33px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .awards__date {
+        display: none;
     }
 }
 
