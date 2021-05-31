@@ -63,6 +63,11 @@ body {
     left: 0 !important;
 }
 
+.swiper-slide {
+    max-width: 442px;
+    width: 442px;
+}
+
 /* GENERAL MEDIA */
 @media screen and (max-width: 992px) {
     .h2-header {
@@ -72,7 +77,7 @@ body {
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
@@ -148,6 +153,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    transition: all 0.4s;
 }
 
 .contacts-line__social span a:hover::before {
@@ -340,10 +346,23 @@ body {
     font-size: 1.2857rem;
     font-weight: bold;
     text-transform: uppercase;
+    transition: all 0.4s;
+}
+
+.nav__item:hover {
+    color: #D1A954;
 }
 
 .phone {
     flex: 0 0 120px;
+}
+
+.phone a {
+    transition: 0.6s;
+}
+
+.phone a:hover {
+    color: #D1A954;
 }
 
 .phone__link {
@@ -429,6 +448,18 @@ body {
 .slider__nav {
     display: flex;
     justify-content: space-between;
+}
+
+.slider__nav button,
+.slider__nav button:hover::after,
+.slider__nav button:hover::before {
+    transition: 0.6s;
+}
+
+.slider__nav button:hover,
+.slider__nav button:hover::after,
+.slider__nav button:hover::before {
+    color: #D1A954;
 }
 
 .slider__nav button {
@@ -686,6 +717,7 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 0 33px;
+        margin: 0;
     }
 
     .about-theatre__description {
@@ -725,28 +757,29 @@ body {
     margin-bottom: 150px;
 }
 
+.our-products__slider img {
+    object-fit: cover;
+}
+
 .our-products__row {
     display: flex;
+    min-width: 0;
 }
 
 .our-products__product {
-    flex: 0 0 25%;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 40px;
     font-family: 'Open Sans Condensed', sans-serif;
     height: 550px;
     max-height: 550px;
     position: relative;
 }
 
-.our-products__product:nth-child(1) {background: url("../img/our-products__slider/slide-1.jpg") center / cover no-repeat;}
-.our-products__product:nth-child(2) {background: url("../img/our-products__slider/slide-2.jpg") center / cover no-repeat;}
-.our-products__product:nth-child(3) {background: url("../img/our-products__slider/slide-3.jpg") center / cover no-repeat;}
-.our-products__product:nth-child(4) {background: url("../img/our-products__slider/slide-4.jpg") center / cover no-repeat;}
-
 .our-products__title {
     font-size: 1.7143rem;
+    position: absolute;
+    top: 40px;
+    left: 40px;
 
 }
 
@@ -768,13 +801,12 @@ body {
 
     .our-products__slider {
         max-width: 690px;
+        width: 690px;
         margin: 0 auto;
-        overflow: auto;
     }
 
     .our-products__product {
         max-width: 442px;
-        flex: 0 0 442px;
     }
 }
 
@@ -788,8 +820,27 @@ body {
     .our-products {
         padding: 0 33px;
     }
+
+    .our-products__slider {
+        max-width: 510px;
+    }
 }
 
+@media screen and (max-width: 576px) {
+    .our-products__slider {
+        max-width: none;
+        width: auto;
+    }
+
+    .our-products__product {
+        max-width: none;
+    }
+
+    .our-products__product img {
+        height: 100%;
+        width: 100%;
+    }
+}
 
 /* OUR-PRODUCTS END */
 /* OUR-PRODUCTS END */
@@ -994,6 +1045,14 @@ body {
 
 .join-us__contacts-list .contacts-list__column:last-child span:last-child {
     margin-bottom: 0;
+}
+
+.contacts-list__column a {
+    transition: 0.6s;
+}
+
+.contacts-list__column a:hover {
+    color: #D1A954;
 }
 
 .join-us__form {
