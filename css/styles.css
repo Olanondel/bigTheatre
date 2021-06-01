@@ -69,6 +69,12 @@ body {
 }
 
 /* GENERAL MEDIA */
+@media screen and (max-width: 1440px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .h2-header {
         margin-bottom: 60px;
@@ -298,7 +304,7 @@ body {
 /* MAIN LINE STYLES */
 .main {
     background: url("../img/main_bg.jpg") center / cover no-repeat;
-    padding: 0 0 200px 0;
+    padding: 0 10px 200px 40px;
     margin-bottom: 145px;
 }
 
@@ -486,13 +492,32 @@ body {
 }
 
 /* MAIN LINE MEDIA */
+@media screen and (max-width: 1440px) {
+
+    .header__row {
+        display: block;
+    }
+
+    .nav {
+        margin-bottom: 50px;
+    }
+
+    .phone {
+        text-align: center;
+    }
+
+    .main-content__slider {
+        margin-left: 10px;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         max-width: 692px;
     }
 
     .main {
-        padding: 0 0 360px 0;
+        padding: 0 10px 360px 40px;
     }
 
     .header {
@@ -615,8 +640,10 @@ body {
 /* ABOUT-THEATRE */
 /* ABOUT-THEATRE */
 .about-theatre {
-    padding: 0 0 0 0;
     margin-bottom: 145px;
+}
+
+.about-theatre__header {
 }
 
 .about-theatre__row {
@@ -683,6 +710,17 @@ body {
 }
 
 /* ABOUT-THEATRE MEDIA */
+@media screen and (max-width: 1440px) {
+
+    .about-theatre__row {
+        justify-content: space-around;
+    }
+
+    .about-theatre__image {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .about-theatre__row {
         max-width: 692px;
@@ -760,6 +798,10 @@ body {
 .our-products {
     padding: 0 0 0 150px;
     margin-bottom: 145px;
+}
+
+.our-products__header {
+    margin-left: -150px;
 }
 
 .our-products__slider img {
@@ -925,7 +967,7 @@ body {
 }
 
 .awards__body {
-    padding: 126px 180px;
+    padding: 126px 0;
     background: url("../img/awards_bg.jpg") center / cover no-repeat;
     display: flex;
     justify-content: center;
@@ -981,6 +1023,10 @@ body {
     .awards__body {
         padding: 126px 80px 126px 190px;
     }
+
+    .awards__date {
+        margin-right: 65px;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -995,6 +1041,10 @@ body {
     .awards__date {
         margin-right: 40px;
     }
+
+    .awards__text {
+        font-size: 2.0714rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1005,11 +1055,37 @@ body {
     .awards__body {
         padding: 126px 33px;
     }
+
+    .awards__date {
+        margin-right: 30px;
+    }
+
+    .awards__text {
+        font-size: 1.7857rem;
+    }
 }
 
 @media screen and (max-width: 576px) {
+    .awards__body {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .awards__date {
-        display: none;
+        flex-direction: row;
+        font-size: 44px;
+        justify-content: center;
+        line-height: normal;
+        margin-right: 0;
+    }
+
+    .awards__date span {
+        display: inline-block;
+        margin-right: 14px;
+    }
+
+    .awards__date span:last-child {
+        margin-right: 0;
     }
 }
 
@@ -1026,8 +1102,11 @@ body {
 /* PARTNERS */
 
 .partners {
-    margin-bottom: 145px;
+    margin-bottom: 40px;
     padding: 0 0 0 0;
+}
+
+.partners__header {
 }
 
 .partners__row {
@@ -1068,6 +1147,12 @@ body {
         padding: 0;
         height: auto;
         width: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .partners {
+        margin-bottom: 120px;
     }
 }
 
