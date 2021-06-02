@@ -1,6 +1,8 @@
 const mobileMenuCloseBtn = document.querySelector('.close-mobile-nav')
 const mobileMenuOpenBtn = document.querySelector('.open-mobile-nav')
 const mainNav = document.querySelector('.nav')
+const partnersSliderElement = document.querySelector('.partners__row')
+const anchors = document.querySelectorAll('a[href^="#"]')
 
 mobileMenuCloseBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -37,8 +39,6 @@ const productionSlider = new Swiper('.our-products__slider', {
     }
 })
 
-const partnersSliderElement = document.querySelector('.partners__row')
-
 let partnersSlider = new Swiper(partnersSliderElement, {
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -64,6 +64,16 @@ let partnersSlider = new Swiper(partnersSliderElement, {
         enabled: true,
         onlyInViewport: true,
     },
+})
+
+const mainSlider = new Swiper('.slider__container', {
+    slidesPerView: 1,
+    loop: true,
+    effect: "fade",
+    navigation: {
+        prevEl: '.slider__prev',
+        nextEl: '.slider__next',
+    }
 })
 
 window.addEventListener('resize', () => {
@@ -105,7 +115,6 @@ window.addEventListener('resize', () => {
 })
 
 // add smooth anchors
-const anchors = document.querySelectorAll('a[href^="#"]')
 for (let anchor of anchors) {
     anchor.addEventListener('click', (e) => {
         e.preventDefault()
@@ -115,5 +124,7 @@ for (let anchor of anchors) {
             behavior: 'smooth',
             block: 'start'
         })
+
+        mainNav.classList.remove('mobile-menu_active')
     })
 }
