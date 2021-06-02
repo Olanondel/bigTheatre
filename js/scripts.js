@@ -2,7 +2,7 @@ const mobileMenuCloseBtn = document.querySelector('.close-mobile-nav')
 const mobileMenuOpenBtn = document.querySelector('.open-mobile-nav')
 const mainNav = document.querySelector('.nav')
 const partnersSliderElement = document.querySelector('.partners__row')
-const anchors = document.querySelectorAll('a[href^="#"]')
+const anchors = document.querySelectorAll('a[href*="#"]')
 
 mobileMenuCloseBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -16,10 +16,15 @@ mobileMenuOpenBtn.addEventListener('click', (e) => {
     mainNav.classList.toggle('mobile-menu_active')
 })
 
+document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('nav') && !e.target.classList.contains('open-mobile-nav')) {
+        mainNav.classList.remove('mobile-menu_active')
+    }
+})
+
 const productionSlider = new Swiper('.our-products__slider', {
     slideToClickedSlide: true,
     watchOverflow: true,
-    loop: true,
     slidesPerView: 1,
     grabCursor: true,
     speed: 800,
