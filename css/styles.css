@@ -87,6 +87,10 @@ body {
     }
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 /* GENERAL END */
 
 
@@ -591,7 +595,7 @@ body {
         background: #333333;
         padding: 140px 47px 140px 39px;
         margin-bottom: 89px;
-        min-height: 100vh;
+        min-height: 100%;
     }
     .close-mobile-nav {
         position: absolute;
@@ -721,6 +725,7 @@ body {
 
 .benefits__benefit span {
     color: #D1A954;
+    margin-right: 4px;
 }
 
 .about-theatre__image {
@@ -742,6 +747,14 @@ body {
 @media screen and (max-width: 1200px) {
     .about-theatre__row {
         max-width: 692px;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .about-theatre__description,
+    .about-theatre__benefits,
+    .about-theatre__image {
+        padding: 0;
     }
 
     .about-theatre__description {
@@ -750,6 +763,7 @@ body {
 
     .about-theatre__benefits {
         flex: 0 0 230px;
+        padding-left: 30px;
     }
 
     .about-theatre__image {
@@ -794,6 +808,7 @@ body {
 
     .about-theatre__benefits {
         flex: auto;
+        padding-left: 0;
     }
 
     .benefits__benefit {
@@ -1120,7 +1135,7 @@ body {
 /* PARTNERS */
 
 .partners {
-    margin-bottom: 40px;
+    margin-bottom: 120px;
     padding: 0 0 0 0;
 }
 
@@ -1131,12 +1146,12 @@ body {
 }
 
 .partners .swiper-wrapper {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
 }
 
 .partners__partner {
+}
+
+.partners__img-block:not(:last-child) {
     margin-bottom: 80px;
 }
 
@@ -1161,7 +1176,6 @@ body {
     }
 
     .partners__partner {
-        flex: auto;
         padding: 0;
         height: auto;
         width: auto;
@@ -1289,6 +1303,7 @@ body {
 
 .join-us__form textarea {
     max-width: 310px;
+    width: 310px;
     height: 100px;
 }
 
@@ -1318,10 +1333,12 @@ body {
 
 /* JOIN-US MEDIA */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
     .join-us__row {
         display: flex;
         flex-direction: column;
+        max-width: 732px;
+        margin: 0 auto;
     }
 
     .join-us__contacts {
@@ -1333,6 +1350,10 @@ body {
     .join-us__form {
         order: 1;
         margin-bottom: 80px;
+    }
+
+    .join-us__form-labels {
+        justify-content: center;
     }
 
     .contacts-list__row {
@@ -1350,6 +1371,16 @@ body {
 
     .contacts-list__column:last-child {
         text-align: right;
+    }
+
+    .join-us__form-bottom-block {
+
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .join-us__form textarea {
+        max-width: 270px;
     }
 }
 
@@ -1413,6 +1444,20 @@ body {
         max-width: 190px;
         order: 1;
         margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width : 533px)  {
+    .join-us__form-labels {
+        margin: 0 -15px 40px;
+    }
+
+    .join-us__label-column {
+        padding: 0 15px;
+    }
+
+    .join-us__textarea-block {
+        padding: 0 15px;
     }
 }
 

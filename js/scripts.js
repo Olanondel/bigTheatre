@@ -8,17 +8,20 @@ mobileMenuCloseBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
     mainNav.classList.toggle('mobile-menu_active')
+    document.body.classList.remove('no-scroll')
 })
 
 mobileMenuOpenBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
     mainNav.classList.toggle('mobile-menu_active')
+    document.body.classList.add('no-scroll')
 })
 
 document.addEventListener('click', (e) => {
     if (!e.target.classList.contains('nav') && !e.target.classList.contains('open-mobile-nav')) {
         mainNav.classList.remove('mobile-menu_active')
+        document.body.classList.remove('no-scroll')
     }
 })
 
@@ -26,6 +29,7 @@ const productionSlider = new Swiper('.our-products__slider', {
     slideToClickedSlide: true,
     watchOverflow: true,
     slidesPerView: 1,
+    loop: true,
     grabCursor: true,
     speed: 800,
     autoplay: {
@@ -48,9 +52,8 @@ let partnersSlider = new Swiper(partnersSliderElement, {
     slidesPerView: 1,
     slidesPerGroup: 1,
     slideToClickedSlide: true,
-    watchOverflow: true,
     grabCursor: true,
-    slidesPerColumn: 2,
+    loop: true,
     breakpoints: {
         576: {
             slidesPerView: 2,
@@ -63,6 +66,7 @@ let partnersSlider = new Swiper(partnersSliderElement, {
         1200: {
             slidesPerView: 4,
             enabled: false,
+            spaceBetween: 30
         }
     },
     keyboard: {
@@ -93,9 +97,8 @@ window.addEventListener('resize', () => {
             slidesPerView: 1,
             slidesPerGroup: 1,
             slideToClickedSlide: true,
-            watchOverflow: true,
             grabCursor: true,
-            slidesPerColumn: 2,
+            loop: true,
             breakpoints: {
                 576: {
                     slidesPerView: 2,
@@ -108,6 +111,7 @@ window.addEventListener('resize', () => {
                 1200: {
                     slidesPerView: 4,
                     enabled: false,
+                    spaceBetween: 30
                 }
             },
             keyboard: {
@@ -115,6 +119,8 @@ window.addEventListener('resize', () => {
                 onlyInViewport: true,
             },
         })
+
+
         partnersSliderElement.dataset.pc = 'false'
     }
 })
