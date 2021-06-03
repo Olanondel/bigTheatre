@@ -595,7 +595,9 @@ body {
         background: #333333;
         padding: 140px 47px 140px 39px;
         margin-bottom: 89px;
-        min-height: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: scroll;
     }
     .close-mobile-nav {
         position: absolute;
